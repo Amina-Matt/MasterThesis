@@ -1,16 +1,29 @@
 import bpy
 import numpy as np
+import sys
+
+import argparse
+# 
+if '--' in sys.argv:
+    argv = sys.argv[sys.argv.index('--') + 1:]
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-s1', '--sample_1', dest='sample_1', metavar='FILE')
+    args = parser.parse_known_args(argv)[0]
+    arrList = list(args.sample_1.split(','))
+
+#this is the list of arrangement given in argument
 
 parameter = "length"
 dir = "/Users/aminamatt/Dropbox/Pdm/FarFieldSimulations/Individual-Shapes/"
 i = 0
 
-arrNumber = 1
-##for arrNumber in range(1):
-finalFileName = "Random_"+parameter+"_"+str(arrNumber)+".stl"
+
+
+finalFileName = "Random_"+parameter+".stl"
 exportPath = dir + finalFileName
+
 #Loop on the individual shapes that forms the complete random arrangement
-for length in ("1.55","1.65","1.625"):
+for length in arrList:
     #import the individual shape
     originalFileName = "KirBas_LW"+length+"0.073.stl"
     importPath = dir+originalFileName
