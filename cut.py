@@ -1,10 +1,12 @@
 import bpy
 import numpy as np
-for distance in np.arange(0.1,0.3, 0.1):
+distance=0.2
+
+for length in (1.5,1.525,1.55,1.575,1.6,1.625,1.65,1.675,1.7,1.725,1.75,1.75,1.8,1.825,1.85,1.9,1.925,1.95,1.975,2.,2.025,2.05,2.075,2.1,2.125,2.150,2.175,2.2,2.25,2.275,2.3,2.325,2.35,2.375,2.4,2.425,2.45,2.475,2.5,2.525,2.55,2.575,2.6,2.625,2.65,2.675,2.7,2.725,2.8,2.825,2.85,2.875,2.9,2.925,3.0,3.05,3.075,3.1,3.125,3.15,3.175,3.2,3.225,3.25,3.275,3.3,3.325,3.35,3.375,3.4,3.425,3.45,3.475,3.5,3.525,3.55,3.575,3.6,3.625,3.65,3.675,3.7,3.725,3.75):
     baseWidth=0.2
     distanceString=str(distance)
     x=baseWidth+(distance/2)
-    originalFileName="KirBas_LW1.550.073.stl"
+    originalFileName="KirigamiBasisLW"+str(length)+"0.073.stl"
     finalFileName="Cut_"+distanceString+"_"+originalFileName
     dir="/Users/aminamatt/Dropbox/Pdm/FarFieldSimulations/Individual-Shapes/"
     importPath=dir+originalFileName
